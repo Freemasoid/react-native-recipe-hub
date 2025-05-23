@@ -14,6 +14,21 @@ This part covers navigation handling. As with previous projects, I've grasped th
 - 📝 Create and manage your own recipes (maybe later)
 - 🎨 Modern UI with smooth animations
 
+## 📱 Screenshots
+
+### My Version (TypeScript)
+
+#### to be delivered...
+
+### Course Version (JavaScript)
+
+<table>
+<tr>
+<td><img src="./assets/images/course-app1.png" alt="Course Version 1" width="300"/></td>
+<td><img src="./assets/images/course-app2.png" alt="Course Version 2" width="300"/></td>
+</tr>
+</table>
+
 ## Tech Stack 🛠
 
 - **Framework**: React Native with Expo
