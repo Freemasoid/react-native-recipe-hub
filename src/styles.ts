@@ -1,20 +1,24 @@
 import { StyleSheet } from "react-native";
 
-export const GlobalStyles = StyleSheet.create({
+const GlobalColors = StyleSheet.create({
+  colors: {
+    backgroundColor: "#fff",
+  },
+});
+
+const GlobalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: GlobalColors.colors.backgroundColor,
     alignItems: "center",
     justifyContent: "center",
   },
-  headerText: {
-    fontSize: 24,
-    fontWeight: "bold",
-    fontFamily: "PoetsenOne-Regular",
+  headerFont: {
+    fontFamily: "Lato-Black",
   },
-  bodyText: {
-    fontSize: 16,
-    fontWeight: "normal",
-    fontFamily: "Fredoka-Regular",
+  bodyFont: {
+    fontFamily: "Lato-Regular",
   },
 });
+
+export { GlobalColors, GlobalStyles };
