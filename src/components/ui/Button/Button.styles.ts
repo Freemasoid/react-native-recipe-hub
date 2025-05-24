@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     borderRadius: 16,
     paddingVertical: 16,
     paddingHorizontal: 24,
-    width: "80%",
+    width: "90%",
     fontSize: 20,
     fontWeight: "700",
     shadowColor: "#000",
@@ -38,6 +38,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     includeFontPadding: false,
     textAlignVertical: "center",
+    fontFamily: "Lato-Black",
   },
   primaryText: {
     color: "#FFFFFF",
