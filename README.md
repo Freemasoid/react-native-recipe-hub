@@ -18,14 +18,18 @@ This part covers navigation handling. As with previous projects, I've grasped th
 
 ### My Version (TypeScript)
 
-#### to be delivered...
+<table>
+<tr>
+<td><img src="./assets/images/app-showcase/myapp1.png" alt="myapp1" width="300"/><td>
+</tr>
+</table>
 
 ### Course Version (JavaScript)
 
 <table>
 <tr>
-<td><img src="./assets/images/course-app1.png" alt="Course Version 1" width="300"/></td>
-<td><img src="./assets/images/course-app2.png" alt="Course Version 2" width="300"/></td>
+<td><img src="./assets/images/app-showcase/course-app1.png" alt="Course Version 1" width="300"/></td>
+<td><img src="./assets/images/app-showcase/course-app2.png" alt="Course Version 2" width="300"/></td>
 </tr>
 </table>
 
