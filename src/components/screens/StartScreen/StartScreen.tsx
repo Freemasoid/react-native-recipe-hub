@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui";
+import { GlobalColors } from "@/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { Image, Text, View } from "react-native";
-import { styles } from "./StartScreen.styles";
+import { styles } from "./styles";
 
 const StartScreen = () => {
   const router = useRouter();
@@ -27,7 +28,7 @@ const StartScreen = () => {
         />
 
         <LinearGradient
-          colors={["transparent", "white"]}
+          colors={["transparent", GlobalColors.colors.backgroundColor]}
           style={styles.gradient}
         />
       </View>
@@ -47,7 +48,7 @@ const StartScreen = () => {
       <View style={styles.buttonContainer}>
         <Button
           variant="primary"
-          onPress={() => router.push("/home")}
+          onPress={() => router.push("/recipes")}
         >
           Get Started
         </Button>

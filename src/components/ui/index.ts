@@ -1,3 +1,6 @@
-import { Button } from "./Button";
+import Button from "./Button";
+import Carousel from "./Carousel";
+import Header from "./Header";
+import PopularCard from "./PopularCard";
 
-export { Button };
+export { Button, Carousel, Header, PopularCard };
