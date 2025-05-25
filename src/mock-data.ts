@@ -91,7 +91,8 @@ const recipes = [
           "Add butter, drained pasta, and pasta water to the beef mixture. Heat over medium-high heat, stirring occasionally for about 3 minutes. Serve hot.",
       },
     ],
-    image: require("../assets/images/recipes/navy-pasta.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207306/food-app/navy-pasta_grm8ad.jpg",
     mostPopular: false,
     type: "Dinner",
     prepTime: "5 minutes",
@@ -140,7 +141,8 @@ const recipes = [
           "Bake for 12-15 minutes until crust is golden and cheese is melted.",
       },
     ],
-    image: require("../assets/images/recipes/margherita-pizza.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206444/food-app/margherita-pizza_idfppe.jpg",
     mostPopular: true,
     type: "Dinner",
     prepTime: "20 minutes",
@@ -190,7 +192,8 @@ const recipes = [
           "Slice into strips and serve with shredded cabbage and tonkatsu sauce.",
       },
     ],
-    image: require("../assets/images/recipes/tonkatsu.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207518/food-app/tonkatsu_omouje.jpg",
     mostPopular: true,
     type: "Dinner",
     prepTime: "15 minutes",
@@ -240,7 +243,8 @@ const recipes = [
           "Bake at 350°F (175°C) for 20 minutes until bubbly. Serve with sour cream.",
       },
     ],
-    image: require("../assets/images/recipes/chicken-enchiladas-verdes.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206335/food-app/chicken-enchiladas-verdes_zujyik.jpg",
     mostPopular: false,
     type: "Dinner",
     prepTime: "30 minutes",
@@ -291,7 +295,8 @@ const recipes = [
           "When rice is al dente, add mushrooms, parmesan, and thyme. Season to taste.",
       },
     ],
-    image: require("../assets/images/recipes/mushroom-risotto.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206490/food-app/mushroom-risotto_wootjh.jpg",
     mostPopular: false,
     type: "Dinner",
     prepTime: "15 minutes",
@@ -342,7 +347,8 @@ const recipes = [
           "Remove meat and strain sauce. Thicken sauce if desired and serve with the sliced meat.",
       },
     ],
-    image: require("../assets/images/recipes/sauerbraten.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207417/food-app/sauerbraten_fyx35t.jpg",
     mostPopular: false,
     type: "Dinner",
     prepTime: "30 minutes",
@@ -392,7 +398,8 @@ const recipes = [
         description: "Serve hot with a dollop of sour cream and fresh dill.",
       },
     ],
-    image: require("../assets/images/recipes/borscht.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206300/food-app/borscht_z44z76.jpg",
     mostPopular: true,
     type: "Dinner",
     prepTime: "20 minutes",
@@ -442,7 +449,8 @@ const recipes = [
           "Divide noodles among bowls, pour hot broth over, and top with tempura shrimp, green onions, and nori.",
       },
     ],
-    image: require("../assets/images/recipes/tempura-udon.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207485/food-app/tempura-udon_w7btd2.jpg",
     mostPopular: false,
     type: "Dinner",
     prepTime: "25 minutes",
@@ -492,7 +500,8 @@ const recipes = [
         description: "Serve warm, dusted with powdered sugar.",
       },
     ],
-    image: require("../assets/images/recipes/apfelpfannkuchen.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206111/food-app/ikvdralockzlyhiz8shn.jpg",
     mostPopular: false,
     type: "Breakfast",
     prepTime: "15 minutes",
@@ -542,7 +551,8 @@ const recipes = [
         description: "Serve with sour cream on the side.",
       },
     ],
-    image: require("../assets/images/recipes/chilaquiles.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206366/food-app/chilaquiles_qyh99e.jpg",
     mostPopular: false,
     type: "Breakfast",
     prepTime: "20 minutes",
@@ -587,7 +597,8 @@ const recipes = [
         description: "Top with green onions, nori strips, and sesame seeds.",
       },
     ],
-    image: require("../assets/images/recipes/tamago-kake-gohan.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207455/food-app/tamago-kake-gohan_ojaxep.jpg",
     mostPopular: false,
     type: "Breakfast",
     prepTime: "5 minutes",
@@ -638,7 +649,8 @@ const recipes = [
           "Let salad sit for 30 minutes to allow bread to absorb flavors. Serve at room temperature.",
       },
     ],
-    image: require("../assets/images/recipes/panzanella-salad.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207351/food-app/panzanella-salad_ydebfw.jpg",
     mostPopular: false,
     type: "Lunch",
     prepTime: "15 minutes",
@@ -688,7 +700,8 @@ const recipes = [
           "Fold dressing into salad gently. Refrigerate for at least 1 hour before serving.",
       },
     ],
-    image: require("../assets/images/recipes/salat-olive.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207388/food-app/salat-olive_lvqklg.jpg",
     mostPopular: false,
     type: "Lunch",
     prepTime: "30 minutes",
@@ -737,7 +750,8 @@ const recipes = [
         description: "Drizzle with crema and serve with lime wedges.",
       },
     ],
-    image: require("../assets/images/recipes/tostadas.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748207557/food-app/tostadas_cotp2z.jpg",
     mostPopular: false,
     type: "Lunch",
     prepTime: "20 minutes",
@@ -790,7 +804,8 @@ const recipes = [
         description: "Garnish with fresh parsley and chives. Serve hot.",
       },
     ],
-    image: require("../assets/images/recipes/bauernfruehstueck.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206226/food-app/bauernfruehstueck_teuk0y.jpg",
     mostPopular: true,
     type: "Breakfast",
     prepTime: "20 minutes",
@@ -846,7 +861,8 @@ const recipes = [
           "Arrange all components in a bento box: rice, chicken, tamagoyaki, vegetables, and pickled ginger. Garnish with nori strips.",
       },
     ],
-    image: require("../assets/images/recipes/bento-box.jpg"),
+    image:
+      "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206266/food-app/bento-box_x2ejkl.png",
     mostPopular: true,
     type: "Lunch",
     prepTime: "30 minutes",
