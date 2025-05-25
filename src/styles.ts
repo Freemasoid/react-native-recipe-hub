@@ -6,6 +6,8 @@ const GlobalColors = {
     black: "#000000",
     white: "#FFFFFF",
     primary: "#FF9F43",
+    yellow: "#FFF479",
+    green: "#E9FCCB",
   },
   button: {
     primary: "#FF9F43",

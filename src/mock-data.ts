@@ -1,3 +1,29 @@
+type Ingredient = {
+  id: number;
+  name: string;
+  quantity: string;
+};
+
+type Step = {
+  id: number;
+  description: string;
+};
+
+export type Recipe = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  ingredients: Ingredient[];
+  steps: Step[];
+  image: string;
+  mostPopular: boolean;
+  type: "Breakfast" | "Lunch" | "Dinner";
+  prepTime: string;
+  cookTime: string;
+  servings: number;
+};
+
 const categories = [
   {
     id: 1,
@@ -17,7 +43,7 @@ const categories = [
   },
   {
     id: 5,
-    name: "Indian",
+    name: "German",
   },
 ];
 
@@ -65,8 +91,8 @@ const recipes = [
           "Add butter, drained pasta, and pasta water to the beef mixture. Heat over medium-high heat, stirring occasionally for about 3 minutes. Serve hot.",
       },
     ],
-    image: "https://placehold.co/400x600",
-    mostPopular: true,
+    image: require("../assets/images/recipes/navy-pasta.jpg"),
+    mostPopular: false,
     type: "Dinner",
     prepTime: "5 minutes",
     cookTime: "30 minutes",
@@ -74,7 +100,7 @@ const recipes = [
   },
   {
     id: 2,
-    title: "Classic Margherita Pizza",
+    title: "Margherita",
     description:
       "A simple yet delicious pizza that showcases the beauty of fresh ingredients. This Neapolitan-style pizza features fresh mozzarella, basil, and tomato sauce.",
     category: "Italian",
@@ -114,7 +140,7 @@ const recipes = [
           "Bake for 12-15 minutes until crust is golden and cheese is melted.",
       },
     ],
-    image: "https://placehold.co/400x600",
+    image: require("../assets/images/recipes/margherita-pizza.jpg"),
     mostPopular: true,
     type: "Dinner",
     prepTime: "20 minutes",
@@ -123,53 +149,7 @@ const recipes = [
   },
   {
     id: 3,
-    title: "Chicken Tikka Masala",
-    description:
-      "A popular Indian dish featuring tender chicken pieces in a rich, creamy tomato-based curry sauce.",
-    category: "Indian",
-    ingredients: [
-      { id: 1, name: "Chicken breast", quantity: "1.5 pounds" },
-      { id: 2, name: "Yogurt", quantity: "1 cup" },
-      { id: 3, name: "Garam masala", quantity: "2 tsp" },
-      { id: 4, name: "Tomato sauce", quantity: "2 cups" },
-      { id: 5, name: "Heavy cream", quantity: "1 cup" },
-      { id: 6, name: "Ginger", quantity: "1 Tbsp, minced" },
-      { id: 7, name: "Garlic", quantity: "4 cloves, minced" },
-    ],
-    steps: [
-      {
-        id: 1,
-        description:
-          "Marinate chicken in yogurt and half the garam masala for at least 2 hours.",
-      },
-      {
-        id: 2,
-        description: "Grill or bake chicken until cooked through.",
-      },
-      {
-        id: 3,
-        description: "Sauté ginger and garlic in oil until fragrant.",
-      },
-      {
-        id: 4,
-        description:
-          "Add tomato sauce and remaining spices, simmer for 10 minutes.",
-      },
-      {
-        id: 5,
-        description: "Add cream and cooked chicken, simmer for 5 minutes.",
-      },
-    ],
-    image: "https://placehold.co/400x600",
-    mostPopular: true,
-    type: "Dinner",
-    prepTime: "2 hours 30 minutes",
-    cookTime: "30 minutes",
-    servings: 4,
-  },
-  {
-    id: 4,
-    title: "Tonkatsu (Japanese Pork Cutlet)",
+    title: "Tonkatsu",
     description:
       "A classic Japanese dish featuring a crispy breaded pork cutlet served with a tangy tonkatsu sauce. Perfect for a satisfying dinner.",
     category: "Japanese",
@@ -210,7 +190,7 @@ const recipes = [
           "Slice into strips and serve with shredded cabbage and tonkatsu sauce.",
       },
     ],
-    image: "https://placehold.co/400x600",
+    image: require("../assets/images/recipes/tonkatsu.jpg"),
     mostPopular: true,
     type: "Dinner",
     prepTime: "15 minutes",
@@ -218,8 +198,8 @@ const recipes = [
     servings: 4,
   },
   {
-    id: 5,
-    title: "Chicken Enchiladas Verdes",
+    id: 4,
+    title: "Chicken Enchiladas",
     description:
       "Traditional Mexican enchiladas filled with chicken and smothered in a tangy green tomatillo sauce. A crowd-pleasing dish that's perfect for family dinners.",
     category: "Mexican",
@@ -260,7 +240,7 @@ const recipes = [
           "Bake at 350°F (175°C) for 20 minutes until bubbly. Serve with sour cream.",
       },
     ],
-    image: "https://placehold.co/400x600",
+    image: require("../assets/images/recipes/chicken-enchiladas-verdes.jpg"),
     mostPopular: false,
     type: "Dinner",
     prepTime: "30 minutes",
@@ -269,7 +249,7 @@ const recipes = [
   },
   {
     id: 6,
-    title: "Risotto ai Funghi (Mushroom Risotto)",
+    title: "Risotto ai Funghi",
     description:
       "A creamy Italian rice dish made with Arborio rice and mixed mushrooms. This comforting dish showcases the perfect balance of earthy flavors and creamy texture.",
     category: "Italian",
@@ -311,12 +291,567 @@ const recipes = [
           "When rice is al dente, add mushrooms, parmesan, and thyme. Season to taste.",
       },
     ],
-    image: "https://placehold.co/400x600",
+    image: require("../assets/images/recipes/mushroom-risotto.jpg"),
     mostPopular: false,
     type: "Dinner",
     prepTime: "15 minutes",
     cookTime: "30 minutes",
     servings: 4,
+  },
+  {
+    id: 7,
+    title: "Sauerbraten",
+    description:
+      "A traditional German pot roast marinated in a sweet and sour sauce, served with red cabbage and potato dumplings. This hearty dish is perfect for family gatherings.",
+    category: "German",
+    ingredients: [
+      { id: 1, name: "Beef rump roast", quantity: "3 pounds" },
+      { id: 2, name: "Red wine vinegar", quantity: "2 cups" },
+      { id: 3, name: "Onion", quantity: "1 large, sliced" },
+      { id: 4, name: "Carrots", quantity: "2, chopped" },
+      { id: 5, name: "Gingerbread cookies", quantity: "4, crushed" },
+      { id: 6, name: "Brown sugar", quantity: "1/4 cup" },
+      { id: 7, name: "Bay leaves", quantity: "2" },
+      { id: 8, name: "Cloves", quantity: "4" },
+      { id: 9, name: "Salt and pepper", quantity: "to taste" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Combine vinegar, onion, carrots, gingerbread, sugar, and spices to make marinade. Place beef in marinade and refrigerate for 3-4 days, turning daily.",
+      },
+      {
+        id: 2,
+        description:
+          "Remove beef from marinade and pat dry. Strain and reserve marinade.",
+      },
+      {
+        id: 3,
+        description:
+          "Brown beef on all sides in a large Dutch oven. Add reserved marinade and bring to a simmer.",
+      },
+      {
+        id: 4,
+        description:
+          "Cover and cook on low heat for 3-4 hours until meat is tender.",
+      },
+      {
+        id: 5,
+        description:
+          "Remove meat and strain sauce. Thicken sauce if desired and serve with the sliced meat.",
+      },
+    ],
+    image: require("../assets/images/recipes/sauerbraten.jpg"),
+    mostPopular: false,
+    type: "Dinner",
+    prepTime: "30 minutes",
+    cookTime: "4 hours",
+    servings: 6,
+  },
+  {
+    id: 8,
+    title: "Borscht",
+    description:
+      "A vibrant and hearty Russian soup featuring beets as the main ingredient, served with sour cream and fresh dill. This traditional dish is both nutritious and delicious.",
+    category: "Russian",
+    ingredients: [
+      { id: 1, name: "Beets", quantity: "4 medium, peeled and grated" },
+      { id: 2, name: "Potatoes", quantity: "3 medium, diced" },
+      { id: 3, name: "Carrots", quantity: "2, grated" },
+      { id: 4, name: "Cabbage", quantity: "1/2 head, shredded" },
+      { id: 5, name: "Onion", quantity: "1 large, diced" },
+      { id: 6, name: "Garlic", quantity: "3 cloves, minced" },
+      { id: 7, name: "Beef broth", quantity: "8 cups" },
+      { id: 8, name: "Tomato paste", quantity: "2 Tbsp" },
+      { id: 9, name: "Sour cream", quantity: "for serving" },
+      { id: 10, name: "Fresh dill", quantity: "1/4 cup, chopped" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "In a large pot, sauté onion and garlic until fragrant. Add carrots and beets, cook for 5 minutes.",
+      },
+      {
+        id: 2,
+        description:
+          "Add tomato paste and stir well. Pour in beef broth and bring to a boil.",
+      },
+      {
+        id: 3,
+        description:
+          "Add potatoes and cabbage. Simmer for 20-25 minutes until vegetables are tender.",
+      },
+      {
+        id: 4,
+        description: "Season with salt and pepper to taste.",
+      },
+      {
+        id: 5,
+        description: "Serve hot with a dollop of sour cream and fresh dill.",
+      },
+    ],
+    image: require("../assets/images/recipes/borscht.jpg"),
+    mostPopular: true,
+    type: "Dinner",
+    prepTime: "20 minutes",
+    cookTime: "45 minutes",
+    servings: 6,
+  },
+  {
+    id: 9,
+    title: "Tempura Udon",
+    description:
+      "A comforting Japanese noodle soup served with crispy tempura shrimp and vegetables. This dish combines the best of Japanese comfort food with the delicate art of tempura.",
+    category: "Japanese",
+    ingredients: [
+      { id: 1, name: "Udon noodles", quantity: "4 servings" },
+      { id: 2, name: "Dashi stock", quantity: "6 cups" },
+      { id: 3, name: "Soy sauce", quantity: "1/4 cup" },
+      { id: 4, name: "Mirin", quantity: "2 Tbsp" },
+      { id: 5, name: "Shrimp", quantity: "12 large" },
+      { id: 6, name: "Tempura flour", quantity: "2 cups" },
+      { id: 7, name: "Ice water", quantity: "1.5 cups" },
+      { id: 8, name: "Green onions", quantity: "4, sliced" },
+      { id: 9, name: "Nori", quantity: "2 sheets, cut into strips" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Prepare dashi stock by combining dashi powder with water. Add soy sauce and mirin, keep warm.",
+      },
+      {
+        id: 2,
+        description:
+          "Mix tempura flour with ice water until just combined (lumps are okay).",
+      },
+      {
+        id: 3,
+        description:
+          "Heat oil to 350°F (175°C). Dip shrimp in tempura batter and fry until golden and crispy.",
+      },
+      {
+        id: 4,
+        description: "Cook udon noodles according to package instructions.",
+      },
+      {
+        id: 5,
+        description:
+          "Divide noodles among bowls, pour hot broth over, and top with tempura shrimp, green onions, and nori.",
+      },
+    ],
+    image: require("../assets/images/recipes/tempura-udon.jpg"),
+    mostPopular: false,
+    type: "Dinner",
+    prepTime: "25 minutes",
+    cookTime: "20 minutes",
+    servings: 4,
+  },
+  {
+    id: 10,
+    title: "Apple Pancakes",
+    description:
+      "A traditional German breakfast featuring thin, crepe-like pancakes filled with caramelized apples and cinnamon. These delicate pancakes are perfect for a weekend brunch.",
+    category: "German",
+    ingredients: [
+      { id: 1, name: "All-purpose flour", quantity: "1.5 cups" },
+      { id: 2, name: "Eggs", quantity: "3" },
+      { id: 3, name: "Milk", quantity: "1.5 cups" },
+      { id: 4, name: "Apples", quantity: "3 medium, thinly sliced" },
+      { id: 5, name: "Butter", quantity: "4 Tbsp" },
+      { id: 6, name: "Brown sugar", quantity: "1/4 cup" },
+      { id: 7, name: "Cinnamon", quantity: "1 tsp" },
+      { id: 8, name: "Vanilla extract", quantity: "1 tsp" },
+      { id: 9, name: "Powdered sugar", quantity: "for dusting" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Whisk together flour, eggs, milk, and vanilla extract until smooth. Let batter rest for 30 minutes.",
+      },
+      {
+        id: 2,
+        description:
+          "In a large skillet, melt 2 Tbsp butter and sauté apples with brown sugar and cinnamon until caramelized.",
+      },
+      {
+        id: 3,
+        description:
+          "Heat a separate pan with remaining butter. Pour a thin layer of batter and cook until golden.",
+      },
+      {
+        id: 4,
+        description:
+          "Add apple mixture to the center of each pancake and fold over.",
+      },
+      {
+        id: 5,
+        description: "Serve warm, dusted with powdered sugar.",
+      },
+    ],
+    image: require("../assets/images/recipes/apfelpfannkuchen.jpg"),
+    mostPopular: false,
+    type: "Breakfast",
+    prepTime: "15 minutes",
+    cookTime: "20 minutes",
+    servings: 4,
+  },
+  {
+    id: 11,
+    title: "Chilaquiles",
+    description:
+      "A traditional Mexican breakfast dish featuring crispy tortilla chips smothered in salsa, topped with eggs, cheese, and fresh garnishes. A perfect way to start your day with bold flavors.",
+    category: "Mexican",
+    ingredients: [
+      { id: 1, name: "Corn tortillas", quantity: "12, cut into triangles" },
+      { id: 2, name: "Vegetable oil", quantity: "1/4 cup" },
+      { id: 3, name: "Tomatoes", quantity: "4 large" },
+      { id: 4, name: "Onion", quantity: "1 medium" },
+      { id: 5, name: "Garlic", quantity: "2 cloves" },
+      { id: 6, name: "Jalapeño", quantity: "1" },
+      { id: 7, name: "Eggs", quantity: "4" },
+      { id: 8, name: "Queso fresco", quantity: "1 cup, crumbled" },
+      { id: 9, name: "Cilantro", quantity: "1/4 cup, chopped" },
+      { id: 10, name: "Sour cream", quantity: "1/2 cup" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Fry tortilla triangles in oil until crispy. Drain on paper towels.",
+      },
+      {
+        id: 2,
+        description:
+          "Blend tomatoes, onion, garlic, and jalapeño to make salsa. Simmer for 10 minutes.",
+      },
+      {
+        id: 3,
+        description:
+          "Pour salsa over tortilla chips and let them soften slightly.",
+      },
+      {
+        id: 4,
+        description: "Top with fried eggs, queso fresco, and cilantro.",
+      },
+      {
+        id: 5,
+        description: "Serve with sour cream on the side.",
+      },
+    ],
+    image: require("../assets/images/recipes/chilaquiles.jpg"),
+    mostPopular: false,
+    type: "Breakfast",
+    prepTime: "20 minutes",
+    cookTime: "25 minutes",
+    servings: 4,
+  },
+  {
+    id: 12,
+    title: "Tamago Kake Gohan",
+    description:
+      "A simple yet delicious Japanese breakfast featuring a raw egg mixed with hot rice, seasoned with soy sauce and garnished with green onions. A quick and nutritious way to start your day.",
+    category: "Japanese",
+    ingredients: [
+      { id: 1, name: "Short-grain rice", quantity: "2 cups, cooked" },
+      { id: 2, name: "Eggs", quantity: "2" },
+      { id: 3, name: "Soy sauce", quantity: "2 Tbsp" },
+      { id: 4, name: "Green onions", quantity: "2, thinly sliced" },
+      { id: 5, name: "Nori", quantity: "1 sheet, cut into strips" },
+      { id: 6, name: "Sesame seeds", quantity: "1 Tbsp" },
+      { id: 7, name: "Mirin", quantity: "1 tsp" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description: "Cook rice according to package instructions.",
+      },
+      {
+        id: 2,
+        description: "Place hot rice in a bowl and make a well in the center.",
+      },
+      {
+        id: 3,
+        description: "Crack an egg into the well and add soy sauce and mirin.",
+      },
+      {
+        id: 4,
+        description:
+          "Mix thoroughly until the egg is cooked by the heat of the rice.",
+      },
+      {
+        id: 5,
+        description: "Top with green onions, nori strips, and sesame seeds.",
+      },
+    ],
+    image: require("../assets/images/recipes/tamago-kake-gohan.jpg"),
+    mostPopular: false,
+    type: "Breakfast",
+    prepTime: "5 minutes",
+    cookTime: "20 minutes",
+    servings: 2,
+  },
+  {
+    id: 13,
+    title: "Panzanella Salad",
+    description:
+      "A refreshing Tuscan bread salad that makes perfect use of stale bread, fresh tomatoes, and basil. This light yet satisfying dish is ideal for a summer lunch.",
+    category: "Italian",
+    ingredients: [
+      { id: 1, name: "Stale Italian bread", quantity: "1 loaf, cubed" },
+      { id: 2, name: "Ripe tomatoes", quantity: "4 large, diced" },
+      { id: 3, name: "Cucumber", quantity: "1 large, diced" },
+      { id: 4, name: "Red onion", quantity: "1 medium, thinly sliced" },
+      { id: 5, name: "Fresh basil", quantity: "1 cup, torn" },
+      { id: 6, name: "Extra virgin olive oil", quantity: "1/4 cup" },
+      { id: 7, name: "Red wine vinegar", quantity: "2 Tbsp" },
+      { id: 8, name: "Garlic", quantity: "1 clove, minced" },
+      { id: 9, name: "Salt and pepper", quantity: "to taste" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Toast bread cubes in a 350°F (175°C) oven until golden and crispy, about 10 minutes.",
+      },
+      {
+        id: 2,
+        description:
+          "In a large bowl, combine tomatoes, cucumber, onion, and basil.",
+      },
+      {
+        id: 3,
+        description:
+          "Whisk together olive oil, vinegar, garlic, salt, and pepper to make dressing.",
+      },
+      {
+        id: 4,
+        description:
+          "Add toasted bread cubes to the vegetables and pour dressing over.",
+      },
+      {
+        id: 5,
+        description:
+          "Let salad sit for 30 minutes to allow bread to absorb flavors. Serve at room temperature.",
+      },
+    ],
+    image: require("../assets/images/recipes/panzanella-salad.jpg"),
+    mostPopular: false,
+    type: "Lunch",
+    prepTime: "15 minutes",
+    cookTime: "10 minutes",
+    servings: 4,
+  },
+  {
+    id: 14,
+    title: "Olivier Salad",
+    description:
+      "A classic Russian potato salad featuring diced vegetables, eggs, and meat in a creamy dressing. This hearty salad is a staple at Russian gatherings and makes a satisfying lunch.",
+    category: "Russian",
+    ingredients: [
+      { id: 1, name: "Potatoes", quantity: "4 medium, boiled and diced" },
+      { id: 2, name: "Carrots", quantity: "3 medium, boiled and diced" },
+      { id: 3, name: "Eggs", quantity: "4, hard-boiled and diced" },
+      { id: 4, name: "Dill pickles", quantity: "4, diced" },
+      { id: 5, name: "Cooked chicken breast", quantity: "2 cups, diced" },
+      { id: 6, name: "Green peas", quantity: "1 cup, cooked" },
+      { id: 7, name: "Mayonnaise", quantity: "1/2 cup" },
+      { id: 8, name: "Dijon mustard", quantity: "1 Tbsp" },
+      { id: 9, name: "Fresh dill", quantity: "1/4 cup, chopped" },
+      { id: 10, name: "Salt and pepper", quantity: "to taste" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Boil potatoes and carrots until tender. Let cool, then dice into small cubes.",
+      },
+      {
+        id: 2,
+        description: "Hard boil eggs, cool, peel, and dice.",
+      },
+      {
+        id: 3,
+        description: "In a large bowl, combine all diced ingredients and peas.",
+      },
+      {
+        id: 4,
+        description:
+          "Mix mayonnaise, mustard, dill, salt, and pepper to make dressing.",
+      },
+      {
+        id: 5,
+        description:
+          "Fold dressing into salad gently. Refrigerate for at least 1 hour before serving.",
+      },
+    ],
+    image: require("../assets/images/recipes/salat-olive.jpg"),
+    mostPopular: false,
+    type: "Lunch",
+    prepTime: "30 minutes",
+    cookTime: "20 minutes",
+    servings: 6,
+  },
+  {
+    id: 15,
+    title: "Tostadas",
+    description:
+      "Crispy corn tortillas topped with refried beans, shredded chicken, fresh vegetables, and tangy crema. A perfect light lunch that's both satisfying and nutritious.",
+    category: "Mexican",
+    ingredients: [
+      { id: 1, name: "Corn tortillas", quantity: "8" },
+      { id: 2, name: "Refried beans", quantity: "2 cups" },
+      { id: 3, name: "Cooked chicken", quantity: "2 cups, shredded" },
+      { id: 4, name: "Lettuce", quantity: "2 cups, shredded" },
+      { id: 5, name: "Tomatoes", quantity: "2 medium, diced" },
+      { id: 6, name: "Avocado", quantity: "1, sliced" },
+      { id: 7, name: "Mexican crema", quantity: "1/2 cup" },
+      { id: 8, name: "Queso fresco", quantity: "1 cup, crumbled" },
+      { id: 9, name: "Lime", quantity: "1, cut into wedges" },
+      { id: 10, name: "Vegetable oil", quantity: "for frying" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Heat oil in a pan and fry tortillas until crispy and golden. Drain on paper towels.",
+      },
+      {
+        id: 2,
+        description: "Warm refried beans in a small saucepan.",
+      },
+      {
+        id: 3,
+        description: "Spread warm beans on each tortilla.",
+      },
+      {
+        id: 4,
+        description:
+          "Top with shredded chicken, lettuce, tomatoes, avocado, and queso fresco.",
+      },
+      {
+        id: 5,
+        description: "Drizzle with crema and serve with lime wedges.",
+      },
+    ],
+    image: require("../assets/images/recipes/tostadas.jpg"),
+    mostPopular: false,
+    type: "Lunch",
+    prepTime: "20 minutes",
+    cookTime: "15 minutes",
+    servings: 4,
+  },
+  {
+    id: 16,
+    title: "Farmer's Breakfast",
+    description:
+      "A hearty German breakfast dish featuring potatoes, eggs, and bacon. This traditional breakfast is perfect for starting your day with energy and warmth.",
+    category: "German",
+    ingredients: [
+      { id: 1, name: "Potatoes", quantity: "4 medium, boiled and diced" },
+      { id: 2, name: "Bacon", quantity: "8 slices, diced" },
+      { id: 3, name: "Onion", quantity: "1 large, diced" },
+      { id: 4, name: "Eggs", quantity: "6" },
+      { id: 5, name: "Butter", quantity: "2 Tbsp" },
+      { id: 6, name: "Fresh parsley", quantity: "1/4 cup, chopped" },
+      { id: 7, name: "Salt and pepper", quantity: "to taste" },
+      { id: 8, name: "Chives", quantity: "2 Tbsp, chopped" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "In a large skillet, cook bacon until crispy. Remove and set aside, leaving the fat in the pan.",
+      },
+      {
+        id: 2,
+        description:
+          "Add butter to the pan and sauté onions until translucent.",
+      },
+      {
+        id: 3,
+        description:
+          "Add diced potatoes and cook until golden and crispy, about 8-10 minutes.",
+      },
+      {
+        id: 4,
+        description: "Return bacon to the pan and mix well.",
+      },
+      {
+        id: 5,
+        description:
+          "Pour beaten eggs over the mixture and cook, stirring gently, until eggs are set but still moist.",
+      },
+      {
+        id: 6,
+        description: "Garnish with fresh parsley and chives. Serve hot.",
+      },
+    ],
+    image: require("../assets/images/recipes/bauernfruehstueck.jpg"),
+    mostPopular: true,
+    type: "Breakfast",
+    prepTime: "20 minutes",
+    cookTime: "25 minutes",
+    servings: 4,
+  },
+  {
+    id: 17,
+    title: "Bento Box",
+    description:
+      "A traditional Japanese lunch box featuring a variety of small dishes including teriyaki chicken, tamagoyaki (rolled omelette), rice, and pickled vegetables. This balanced meal is both visually appealing and nutritious.",
+    category: "Japanese",
+    ingredients: [
+      { id: 1, name: "Short-grain rice", quantity: "2 cups, cooked" },
+      { id: 2, name: "Chicken thighs", quantity: "2, boneless" },
+      { id: 3, name: "Eggs", quantity: "3" },
+      { id: 4, name: "Carrots", quantity: "1 medium, julienned" },
+      { id: 5, name: "Broccoli", quantity: "1 cup, florets" },
+      { id: 6, name: "Soy sauce", quantity: "1/4 cup" },
+      { id: 7, name: "Mirin", quantity: "2 Tbsp" },
+      { id: 8, name: "Sugar", quantity: "1 Tbsp" },
+      { id: 9, name: "Pickled ginger", quantity: "1/4 cup" },
+      { id: 10, name: "Nori", quantity: "1 sheet, cut into strips" },
+    ],
+    steps: [
+      {
+        id: 1,
+        description:
+          "Cook rice according to package instructions. Let cool slightly.",
+      },
+      {
+        id: 2,
+        description:
+          "Make teriyaki sauce by combining soy sauce, mirin, and sugar. Simmer until slightly thickened.",
+      },
+      {
+        id: 3,
+        description:
+          "Cook chicken thighs in teriyaki sauce until done. Slice into bite-sized pieces.",
+      },
+      {
+        id: 4,
+        description:
+          "Make tamagoyaki: Beat eggs with a pinch of salt and sugar. Cook in a rectangular pan, rolling as you go.",
+      },
+      {
+        id: 5,
+        description: "Steam or blanch carrots and broccoli until crisp-tender.",
+      },
+      {
+        id: 6,
+        description:
+          "Arrange all components in a bento box: rice, chicken, tamagoyaki, vegetables, and pickled ginger. Garnish with nori strips.",
+      },
+    ],
+    image: require("../assets/images/recipes/bento-box.jpg"),
+    mostPopular: true,
+    type: "Lunch",
+    prepTime: "30 minutes",
+    cookTime: "25 minutes",
+    servings: 1,
   },
 ];
 
