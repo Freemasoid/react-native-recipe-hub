@@ -1,4 +1,4 @@
-import { GlobalStyles } from "@/styles";
+import { GlobalColors, GlobalStyles } from "@/styles";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -21,12 +21,84 @@ export const styles = StyleSheet.create({
   },
   seeAll: {
     fontSize: 14,
-    color: "#6B7280",
+    color: GlobalColors.grey[600],
   },
   categoryButtons: {
     flexDirection: "row",
-    marginVertical: 24,
+    marginTop: 16,
     width: "100%",
     justifyContent: "space-between",
+  },
+  carouselContainer: {
+    marginTop: 16,
+  },
+  popularContainer: {
+    flex: 1,
+    borderWidth: 0.5,
+    borderColor: GlobalColors.grey[400],
+    justifyContent: "center",
+    marginRight: 16,
+    marginLeft: 0,
+    backgroundColor: GlobalColors.grey[100],
+    borderRadius: 8,
+  },
+  popularImage: {
+    flex: 2,
+    width: "100%",
+    height: "70%",
+    borderTopLeftRadius: 8,
+    borderTopRightRadius: 8,
+  },
+  popularTitleContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  popularTitle: {
+    fontSize: 14,
+    fontWeight: "600",
+    textAlign: "center",
+  },
+  recipeContainer: {
+    flex: 1,
+    borderWidth: 0.5,
+    borderColor: GlobalColors.grey[400],
+    justifyContent: "center",
+    marginRight: 16,
+    marginLeft: 0,
+    backgroundColor: GlobalColors.colors.white,
+    borderRadius: 20,
+    alignItems: "center",
+  },
+  recipeContent: {
+    flex: 1,
+    backgroundColor: GlobalColors.grey[400],
+    width: "100%",
+    borderWidth: 10,
+    borderColor: GlobalColors.colors.white,
+    borderRadius: 20,
+  },
+  recipeImage: {
+    flex: 2,
+    width: "100%",
+    height: "70%",
+    borderWidth: 10,
+    borderColor: GlobalColors.colors.white,
+    borderRadius: 20,
+  },
+  recipeTitleContainer: {
+    flex: 1,
+    justifyContent: "flex-end",
+    alignItems: "flex-start",
+    width: "90%",
+    borderRadius: 20,
+  },
+  recipeTitle: {
+    fontSize: 24,
+    backgroundColor: GlobalColors.colors.white,
+    borderTopRightRadius: 20,
+    fontWeight: "600",
+    textAlign: "left",
+    padding: 6,
   },
 });

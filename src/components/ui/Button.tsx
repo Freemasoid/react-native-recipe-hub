@@ -2,7 +2,7 @@ import { GlobalColors } from "@/styles";
 import { Platform, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export type ButtonProps = {
-  variant: "primary" | "secondary" | "selection";
+  variant: "primary" | "secondary" | "selectionActive" | "selectionInactive";
   children: React.ReactNode;
   onPress: () => void;
 };
@@ -45,9 +45,17 @@ export const styles = StyleSheet.create({
   secondary: {
     backgroundColor: GlobalColors.button.secondary,
   },
-  selection: {
+  selectionActive: {
     backgroundColor: GlobalColors.colors.black,
     width: 115,
+  },
+  selectionInactive: {
+    backgroundColor: GlobalColors.grey[400],
+    width: 115,
+    shadowOpacity: 0,
+    shadowRadius: 0,
+    elevation: 0,
+    marginVertical: 5,
   },
   text: {
     fontSize: 24,
@@ -65,8 +73,12 @@ export const styles = StyleSheet.create({
   secondaryText: {
     color: GlobalColors.colors.black,
   },
-  selectionText: {
+  selectionActiveText: {
     color: GlobalColors.colors.white,
+    fontSize: 14,
+  },
+  selectionInactiveText: {
+    color: GlobalColors.colors.black,
     fontSize: 14,
   },
 });
