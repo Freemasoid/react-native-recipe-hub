@@ -33,30 +33,7 @@ export default function RootLayout() {
       style={{ flex: 1 }}
       onLayout={onLayoutRootView}
     >
-      <Stack>
-        <Stack.Screen
-          name="index"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="home"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="categories"
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="recipe/[id]"
-          options={{ headerShown: false }}
-        />
-      </Stack>
+      <Stack screenOptions={{ headerShown: false }} />
     </View>
   );
 }

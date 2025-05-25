@@ -1,9 +1,9 @@
 import { Text, View } from "react-native";
-
-export default function CategoryScreen() {
+const Saved = () => {
   return (
     <View>
-      <Text>Category screen</Text>
+      <Text>Saved</Text>
     </View>
   );
-}
+};
+export default Saved;
