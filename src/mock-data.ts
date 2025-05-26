@@ -863,7 +863,7 @@ const recipes = [
     ],
     image:
       "https://res.cloudinary.com/dhts7eqoi/image/upload/v1748206266/food-app/bento-box_x2ejkl.png",
-    mostPopular: true,
+    mostPopular: false,
     type: "Lunch",
     prepTime: "30 minutes",
     cookTime: "25 minutes",
