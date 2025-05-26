@@ -21,6 +21,7 @@ const RecipesScreen = () => {
 
   useEffect(() => {
     setDaytimeRecipes(recipesByDaytime);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [daytime]);
 
   const width = Dimensions.get("window").width;
@@ -33,8 +34,8 @@ const RecipesScreen = () => {
   const RECIPES_WIDTH = width / RECIPES_COUNT;
 
   // this is workaraound to make carousel work properly
-  const POPULAR_MARGIN = width * 0.41;
-  const RECIPES_MARGIN = width * 0.56;
+  const POPULAR_MARGIN = width * 0.4;
+  const RECIPES_MARGIN = width * 0.55;
 
   const getAlternatingColor = (index: number) => {
     return index % 2 === 0
@@ -46,7 +47,7 @@ const RecipesScreen = () => {
     <View style={styles.container}>
       <Header />
 
-      <View style={styles.section}>
+      <View style={styles.sectionMostPopular}>
         <Text style={styles.sectionTitle}>Most Popular</Text>
 
         <View style={styles.carouselContainer}>
@@ -81,9 +82,16 @@ const RecipesScreen = () => {
         </View>
       </View>
 
-      <View style={styles.section}>
+      <View style={styles.sectionChooseYourFood}>
         <Text style={styles.sectionTitle}>Choose your food</Text>
-        <View style={styles.categoryButtons}>
+        <View
+          style={[
+            styles.categoryButtons,
+            {
+              width: width - 48, // Accounting for parent's paddingHorizontal (24px on each side)
+            },
+          ]}
+        >
           <Button
             variant={
               daytime === "breakfast" ? "selectionActive" : "selectionInactive"
@@ -91,6 +99,7 @@ const RecipesScreen = () => {
             onPress={() => {
               setDaytime("breakfast");
             }}
+            style={{ width: (width - 48 - 16) / 3 }} // Width minus padding minus spacing between buttons
           >
             Breakfast
           </Button>
@@ -101,6 +110,7 @@ const RecipesScreen = () => {
             onPress={() => {
               setDaytime("lunch");
             }}
+            style={{ width: (width - 48 - 16) / 3 }}
           >
             Lunch
           </Button>
@@ -111,6 +121,7 @@ const RecipesScreen = () => {
             onPress={() => {
               setDaytime("dinner");
             }}
+            style={{ width: (width - 48 - 16) / 3 }}
           >
             Dinner
           </Button>

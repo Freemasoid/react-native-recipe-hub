@@ -1,16 +1,23 @@
 import { GlobalColors } from "@/styles";
-import { Platform, StyleSheet, Text, TouchableOpacity } from "react-native";
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+} from "react-native";
 
 export type ButtonProps = {
   variant: "primary" | "secondary" | "selectionActive" | "selectionInactive";
   children: React.ReactNode;
   onPress: () => void;
+  style?: ViewStyle;
 };
 
-function Button({ variant, children, onPress }: ButtonProps) {
+function Button({ variant, children, onPress, style }: ButtonProps) {
   return (
     <TouchableOpacity
-      style={[styles.button, styles[variant]]}
+      style={[styles.button, styles[variant], style]}
       onPress={onPress}
     >
       <Text style={[styles.text, styles[`${variant}Text`]]}>{children}</Text>
@@ -47,11 +54,15 @@ export const styles = StyleSheet.create({
   },
   selectionActive: {
     backgroundColor: GlobalColors.colors.black,
-    width: 115,
+    width: "30%",
+    marginRight: 0,
+    paddingHorizontal: 10,
   },
   selectionInactive: {
     backgroundColor: GlobalColors.grey[400],
-    width: 115,
+    width: "30%",
+    marginRight: 0,
+    paddingHorizontal: 10,
     shadowOpacity: 0,
     shadowRadius: 0,
     elevation: 0,

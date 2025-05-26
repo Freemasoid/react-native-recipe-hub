@@ -3,7 +3,15 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: { ...GlobalStyles.container },
-  section: {
+  sectionMostPopular: {
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingVertical: 16,
+    alignItems: "flex-start",
+    width: "100%",
+  },
+  sectionChooseYourFood: {
+    flex: 3,
     paddingHorizontal: 24,
     paddingVertical: 16,
     alignItems: "flex-start",
@@ -60,11 +68,12 @@ export const styles = StyleSheet.create({
     textAlign: "center",
   },
   recipeContainer: {
-    flex: 1,
+    flex: 2,
     borderWidth: 0.5,
     borderColor: GlobalColors.grey[400],
     justifyContent: "center",
     marginRight: 16,
+    marginBottom: 16,
     marginLeft: 0,
     backgroundColor: GlobalColors.colors.white,
     borderRadius: 20,
