@@ -1,7 +1,7 @@
 import { Button, Header } from "@/components/ui";
 import type { Recipe } from "@/mock-data";
 import { recipes } from "@/mock-data";
-import { GlobalColors } from "@/styles";
+import { GlobalValues } from "@/styles";
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image, Text, View } from "react-native";
 import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
@@ -39,8 +39,8 @@ const RecipesScreen = () => {
 
   const getAlternatingColor = (index: number) => {
     return index % 2 === 0
-      ? GlobalColors.colors.yellow
-      : GlobalColors.colors.green;
+      ? GlobalValues.colors.yellow
+      : GlobalValues.colors.green;
   };
 
   return (

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const GlobalColors = {
+const GlobalValues = {
   colors: {
     backgroundColor: "#F6F7F9",
     black: "#000000",
@@ -24,19 +24,25 @@ const GlobalColors = {
     800: "#8B8D91",
     900: "#787A7E",
   },
+  fonts: {
+    black: "Lato-Black",
+    blackItalic: "Lato-BlackItalic",
+    bold: "Lato-Bold",
+    boldItalic: "Lato-BoldItalic",
+    italic: "Lato-Italic",
+    light: "Lato-Light",
+    lightItalic: "Lato-LightItalic",
+    regular: "Lato-Regular",
+    thin: "Lato-Thin",
+    thinItalic: "Lato-ThinItalic",
+  },
 };
 
 const GlobalStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: GlobalColors.colors.backgroundColor,
-  },
-  headerFont: {
-    fontFamily: "Lato-Black",
-  },
-  bodyFont: {
-    fontFamily: "Lato-Regular",
+    backgroundColor: GlobalValues.colors.backgroundColor,
   },
 });
 
-export { GlobalColors, GlobalStyles };
+export { GlobalStyles, GlobalValues };

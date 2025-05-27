@@ -1,4 +1,4 @@
-import { GlobalColors } from "@/styles";
+import { GlobalValues } from "@/styles";
 import {
   Platform,
   StyleSheet,
@@ -46,20 +46,20 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   primary: {
-    backgroundColor: GlobalColors.button.primary,
+    backgroundColor: GlobalValues.button.primary,
     ...(Platform.OS === "android" && { elevation: 5 }),
   },
   secondary: {
-    backgroundColor: GlobalColors.button.secondary,
+    backgroundColor: GlobalValues.button.secondary,
   },
   selectionActive: {
-    backgroundColor: GlobalColors.colors.black,
+    backgroundColor: GlobalValues.colors.black,
     width: "30%",
     marginRight: 0,
     paddingHorizontal: 10,
   },
   selectionInactive: {
-    backgroundColor: GlobalColors.grey[400],
+    backgroundColor: GlobalValues.grey[400],
     width: "30%",
     marginRight: 0,
     paddingHorizontal: 10,
@@ -79,17 +79,17 @@ export const styles = StyleSheet.create({
     fontFamily: "Lato-Black",
   },
   primaryText: {
-    color: GlobalColors.colors.white,
+    color: GlobalValues.colors.white,
   },
   secondaryText: {
-    color: GlobalColors.colors.black,
+    color: GlobalValues.colors.black,
   },
   selectionActiveText: {
-    color: GlobalColors.colors.white,
+    color: GlobalValues.colors.white,
     fontSize: 14,
   },
   selectionInactiveText: {
-    color: GlobalColors.colors.black,
+    color: GlobalValues.colors.black,
     fontSize: 14,
   },
 });

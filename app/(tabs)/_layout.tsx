@@ -1,4 +1,4 @@
-import { GlobalColors } from "@/styles";
+import { GlobalValues } from "@/styles";
 import { PlatformPressable } from "@react-navigation/elements";
 import { Tabs } from "expo-router";
 import { ChefHat, Heart, Search, User } from "lucide-react-native";
@@ -8,7 +8,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: GlobalColors.colors.primary,
+        tabBarActiveTintColor: GlobalValues.colors.primary,
         tabBarButton: (props) => (
           <PlatformPressable
             {...props}

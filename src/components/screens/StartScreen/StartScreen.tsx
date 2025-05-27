@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui";
-import { GlobalColors } from "@/styles";
+import { GlobalValues } from "@/styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -28,7 +28,7 @@ const StartScreen = () => {
         />
 
         <LinearGradient
-          colors={["transparent", GlobalColors.colors.backgroundColor]}
+          colors={["transparent", GlobalValues.colors.backgroundColor]}
           style={styles.gradient}
         />
       </View>

@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui";
-import { GlobalStyles } from "@/styles";
+import { GlobalStyles, GlobalValues } from "@/styles";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { usePathname, useRouter } from "expo-router";
 import { useEffect } from "react";
@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   headerText: {
-    ...GlobalStyles.headerFont,
+    fontFamily: GlobalValues.fonts.black,
     fontSize: 100,
   },
   bodyText: {
-    ...GlobalStyles.bodyFont,
+    fontFamily: GlobalValues.fonts.regular,
     fontSize: 20,
   },
 });

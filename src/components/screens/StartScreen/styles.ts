@@ -1,4 +1,4 @@
-import { GlobalStyles } from "@/styles";
+import { GlobalStyles, GlobalValues } from "@/styles";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -36,7 +36,7 @@ export const styles = StyleSheet.create({
     fontSize: 42,
     textAlign: "left",
     marginBottom: 5,
-    ...GlobalStyles.headerFont,
+    fontFamily: GlobalValues.fonts.black,
   },
   buttonContainer: {
     width: "100%",

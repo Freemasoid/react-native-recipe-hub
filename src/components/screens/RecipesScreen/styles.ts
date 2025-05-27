@@ -1,4 +1,4 @@
-import { GlobalColors, GlobalStyles } from "@/styles";
+import { GlobalStyles, GlobalValues } from "@/styles";
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
@@ -29,7 +29,7 @@ export const styles = StyleSheet.create({
   },
   seeAll: {
     fontSize: 14,
-    color: GlobalColors.grey[600],
+    color: GlobalValues.grey[600],
   },
   categoryButtons: {
     flexDirection: "row",
@@ -43,11 +43,11 @@ export const styles = StyleSheet.create({
   popularContainer: {
     flex: 1,
     borderWidth: 0.5,
-    borderColor: GlobalColors.grey[400],
+    borderColor: GlobalValues.grey[400],
     justifyContent: "center",
     marginRight: 16,
     marginLeft: 0,
-    backgroundColor: GlobalColors.grey[100],
+    backgroundColor: GlobalValues.grey[100],
     borderRadius: 8,
   },
   popularImage: {
@@ -70,21 +70,21 @@ export const styles = StyleSheet.create({
   recipeContainer: {
     flex: 2,
     borderWidth: 0.5,
-    borderColor: GlobalColors.grey[400],
+    borderColor: GlobalValues.grey[400],
     justifyContent: "center",
     marginRight: 16,
     marginBottom: 16,
     marginLeft: 0,
-    backgroundColor: GlobalColors.colors.white,
+    backgroundColor: GlobalValues.colors.white,
     borderRadius: 20,
     alignItems: "center",
   },
   recipeContent: {
     flex: 1,
-    backgroundColor: GlobalColors.grey[400],
+    backgroundColor: GlobalValues.grey[400],
     width: "100%",
     borderWidth: 10,
-    borderColor: GlobalColors.colors.white,
+    borderColor: GlobalValues.colors.white,
     borderRadius: 20,
   },
   recipeImage: {
@@ -92,7 +92,7 @@ export const styles = StyleSheet.create({
     width: "100%",
     height: "70%",
     borderWidth: 10,
-    borderColor: GlobalColors.colors.white,
+    borderColor: GlobalValues.colors.white,
     borderRadius: 20,
   },
   recipeTitleContainer: {
@@ -104,7 +104,7 @@ export const styles = StyleSheet.create({
   },
   recipeTitle: {
     fontSize: 24,
-    backgroundColor: GlobalColors.colors.white,
+    backgroundColor: GlobalValues.colors.white,
     borderTopRightRadius: 20,
     fontWeight: "600",
     textAlign: "left",
