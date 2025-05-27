@@ -1,8 +1,14 @@
-import { Text, View } from "react-native";
+import { ExploreScreen } from "@/components/screens/Explore";
+import { GlobalStyles } from "@/styles";
+import { View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 const Explore = () => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View>
-      <Text>Explore</Text>
+    <View style={[GlobalStyles.container, { paddingTop: insets.top }]}>
+      <ExploreScreen />
     </View>
   );
 };
