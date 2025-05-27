@@ -1,4 +1,5 @@
-import { User } from "lucide-react-native";
+import { GlobalValues } from "@/styles";
+import { ChefHat, User } from "lucide-react-native";
 import { StyleSheet, Text, View } from "react-native";
 
 const Header = () => {
@@ -16,6 +17,14 @@ const Header = () => {
           <Text style={styles.username}>Roman Reins</Text>
         </View>
       </View>
+
+      <View style={styles.titleContainer}>
+        <ChefHat
+          size={38}
+          color={GlobalValues.colors.primary}
+        />
+        <Text style={styles.title}>RecipeHub</Text>
+      </View>
     </View>
   );
 };
@@ -28,6 +37,16 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 24,
     paddingVertical: 16,
+  },
+  title: {
+    fontSize: 12,
+    fontWeight: "bold",
+    color: GlobalValues.colors.black,
+    textAlign: "justify",
+  },
+  titleContainer: {
+    flexDirection: "column",
+    alignItems: "center",
   },
   profileSection: {
     flexDirection: "row",
