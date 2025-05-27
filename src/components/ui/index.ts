@@ -1,5 +1,6 @@
 import Button from "./Button";
+import ExploreCard from "./ExploreCard";
 import Header from "./Header";
-import PopularCard from "./PopularCard";
+import Search from "./Search";
 
-export { Button, Header, PopularCard };
+export { Button, ExploreCard, Header, Search };
