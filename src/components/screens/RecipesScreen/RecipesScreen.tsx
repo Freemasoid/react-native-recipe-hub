@@ -1,9 +1,9 @@
 import { Button, Header } from "@/components/ui";
-import type { Recipe } from "@/mock-data";
-import { recipes } from "@/mock-data";
+import { recipes, type Recipe } from "@/mock-data";
 import { GlobalValues } from "@/styles";
+import { router } from "expo-router";
 import React, { useEffect, useState } from "react";
-import { Dimensions, Image, Text, View } from "react-native";
+import { Dimensions, Image, Pressable, Text, View } from "react-native";
 import Carousel, { ICarouselInstance } from "react-native-reanimated-carousel";
 import { styles } from "./styles";
 
@@ -18,6 +18,10 @@ const RecipesScreen = () => {
   const recipesByDaytime = recipes.filter(
     (recipe) => recipe.type.toLowerCase() === daytime
   ) as Recipe[];
+
+  const handleRecipePress = (recipe: Recipe) => {
+    router.push(`/recipe/${recipe.id}`);
+  };
 
   useEffect(() => {
     setDaytimeRecipes(recipesByDaytime);
@@ -64,7 +68,10 @@ const RecipesScreen = () => {
             }}
             data={mostPopular}
             renderItem={({ item }) => (
-              <View style={styles.popularContainer}>
+              <Pressable
+                style={styles.popularContainer}
+                onPress={() => handleRecipePress(item as Recipe)}
+              >
                 <Image
                   source={
                     typeof item.image === "string"
@@ -76,7 +83,7 @@ const RecipesScreen = () => {
                 <View style={styles.popularTitleContainer}>
                   <Text style={styles.popularTitle}>{item.title}</Text>
                 </View>
-              </View>
+              </Pressable>
             )}
           />
         </View>
@@ -142,11 +149,12 @@ const RecipesScreen = () => {
             data={daytimeRecipes}
             renderItem={({ item, index }) => (
               <View style={styles.recipeContainer}>
-                <View
+                <Pressable
                   style={[
                     styles.recipeContent,
                     { backgroundColor: getAlternatingColor(index) },
                   ]}
+                  onPress={() => handleRecipePress(item as Recipe)}
                 >
                   <Image
                     source={
@@ -162,7 +170,7 @@ const RecipesScreen = () => {
                   <View style={styles.recipeTitleContainer}>
                     <Text style={styles.recipeTitle}>{item.title}</Text>
                   </View>
-                </View>
+                </Pressable>
               </View>
             )}
           />
