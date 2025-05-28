@@ -1,21 +1,10 @@
 import { Button } from "@/components/ui";
 import { GlobalStyles, GlobalValues } from "@/styles";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import { usePathname, useRouter } from "expo-router";
-import { useEffect } from "react";
+import { router } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function NotFound() {
-  const pathname = usePathname();
-  const router = useRouter();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      pathname
-    );
-  }, [pathname]);
-
   return (
     <View style={styles.container}>
       <View style={styles.textContainer}>
@@ -32,7 +21,7 @@ export default function NotFound() {
 
       <Button
         variant="primary"
-        onPress={() => router.push("/recipes")}
+        onPress={() => router.replace("/recipes")}
       >
         Return to Home
       </Button>
@@ -41,11 +30,15 @@ export default function NotFound() {
 }
 
 const styles = StyleSheet.create({
-  container: GlobalStyles.container,
+  container: {
+    ...GlobalStyles.container,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   textContainer: {
     alignItems: "center",
     justifyContent: "center",
-    marginBottom: 20,
+    marginBottom: 80,
   },
   headerText: {
     fontFamily: GlobalValues.fonts.black,
