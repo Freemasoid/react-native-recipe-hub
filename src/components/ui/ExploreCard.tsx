@@ -4,7 +4,13 @@ import { HeartPlus } from "lucide-react-native";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import StarRating from "./StarRating";
 
-const ExploreCard = ({ item, index }: { item: Recipe; index: number }) => {
+interface ExploreCardProps {
+  item: Recipe;
+  index: number;
+  onPress: () => void;
+}
+
+const ExploreCard = ({ item, index, onPress }: ExploreCardProps) => {
   return (
     <View
       style={styles.recipeContainer}
@@ -13,9 +19,7 @@ const ExploreCard = ({ item, index }: { item: Recipe; index: number }) => {
       <View style={styles.recipeContent}>
         <Pressable
           style={styles.cardPressableArea}
-          onPress={() => {
-            console.log("Navigate to recipe:", item.id);
-          }}
+          onPress={onPress}
         >
           <Image
             source={

@@ -1,6 +1,7 @@
 import { ExploreCard, Search } from "@/components/ui";
 import type { Recipe } from "@/mock-data";
 import { recipes } from "@/mock-data";
+import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, Text, View } from "react-native";
 import styles from "./styles";
@@ -14,6 +15,10 @@ const ExploreScreen = () => {
       recipe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       recipe.type.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  const handleRecipePress = (recipe: Recipe) => {
+    router.push(`/recipe/${recipe.id}`);
+  };
 
   return (
     <View style={styles.container}>
@@ -34,6 +39,7 @@ const ExploreScreen = () => {
             <ExploreCard
               item={item}
               index={index}
+              onPress={() => handleRecipePress(item)}
             />
           )}
         />
