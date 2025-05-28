@@ -14,7 +14,7 @@ const ExploreScreen = () => {
       recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       recipe.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
       recipe.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      recipe.category.toLowerCase().includes(searchQuery.toLowerCase())
+      recipe.category.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleRecipePress = (recipe: Recipe) => {

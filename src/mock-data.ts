@@ -9,24 +9,29 @@ type Step = {
   description: string;
 };
 
+type Category = {
+  id: number;
+  name: string;
+};
+
 export type Recipe = {
   id: number;
   title: string;
   description: string;
-  category: string;
+  category: Category;
   ingredients: Ingredient[];
   steps: Step[];
   image: string;
   mostPopular: boolean;
   type: "Breakfast" | "Lunch" | "Dinner";
-  prepTime: string;
-  cookTime: string;
   servings: number;
+  cookTime: string;
   rating: number;
   reviews: number;
+  prepTime: string;
 };
 
-const categories = [
+const categories: Category[] = [
   {
     id: 1,
     name: "Italian",
@@ -49,13 +54,13 @@ const categories = [
   },
 ];
 
-const recipes = [
+const recipes: Recipe[] = [
   {
     id: 1,
     title: "Russian Navy Pasta",
     description:
       "A classic Soviet-era pasta dish that combines ground beef with pasta in a simple yet satisfying way. This budget-friendly recipe was popular among navy crews and students.",
-    category: "Russian",
+    category: categories[1],
     ingredients: [
       { id: 1, name: "Vegetable oil", quantity: "2 Tbsp" },
       { id: 2, name: "Medium onion", quantity: "1, thinly sliced" },
@@ -108,7 +113,7 @@ const recipes = [
     title: "Margherita",
     description:
       "A simple yet delicious pizza that showcases the beauty of fresh ingredients. This Neapolitan-style pizza features fresh mozzarella, basil, and tomato sauce.",
-    category: "Italian",
+    category: categories[0],
     ingredients: [
       { id: 1, name: "Pizza dough", quantity: "1 pound" },
       { id: 2, name: "Fresh mozzarella", quantity: "8 oz" },
@@ -160,7 +165,7 @@ const recipes = [
     title: "Tonkatsu",
     description:
       "A classic Japanese dish featuring a crispy breaded pork cutlet served with a tangy tonkatsu sauce. Perfect for a satisfying dinner.",
-    category: "Japanese",
+    category: categories[2],
     ingredients: [
       { id: 1, name: "Pork loin chops", quantity: "4 pieces" },
       { id: 2, name: "Panko breadcrumbs", quantity: "2 cups" },
@@ -213,7 +218,7 @@ const recipes = [
     title: "Chicken Enchiladas",
     description:
       "Traditional Mexican enchiladas filled with chicken and smothered in a tangy green tomatillo sauce. A crowd-pleasing dish that's perfect for family dinners.",
-    category: "Mexican",
+    category: categories[3],
     ingredients: [
       { id: 1, name: "Chicken breast", quantity: "2 pounds" },
       { id: 2, name: "Tomatillos", quantity: "1 pound" },
@@ -266,7 +271,7 @@ const recipes = [
     title: "Risotto ai Funghi",
     description:
       "A creamy Italian rice dish made with Arborio rice and mixed mushrooms. This comforting dish showcases the perfect balance of earthy flavors and creamy texture.",
-    category: "Italian",
+    category: categories[0],
     ingredients: [
       { id: 1, name: "Arborio rice", quantity: "1.5 cups" },
       { id: 2, name: "Mixed mushrooms", quantity: "1 pound" },
@@ -320,7 +325,7 @@ const recipes = [
     title: "Sauerbraten",
     description:
       "A traditional German pot roast marinated in a sweet and sour sauce, served with red cabbage and potato dumplings. This hearty dish is perfect for family gatherings.",
-    category: "German",
+    category: categories[4],
     ingredients: [
       { id: 1, name: "Beef rump roast", quantity: "3 pounds" },
       { id: 2, name: "Red wine vinegar", quantity: "2 cups" },
@@ -374,7 +379,7 @@ const recipes = [
     title: "Borscht",
     description:
       "A vibrant and hearty Russian soup featuring beets as the main ingredient, served with sour cream and fresh dill. This traditional dish is both nutritious and delicious.",
-    category: "Russian",
+    category: categories[1],
     ingredients: [
       { id: 1, name: "Beets", quantity: "4 medium, peeled and grated" },
       { id: 2, name: "Potatoes", quantity: "3 medium, diced" },
@@ -427,7 +432,7 @@ const recipes = [
     title: "Tempura Udon",
     description:
       "A comforting Japanese noodle soup served with crispy tempura shrimp and vegetables. This dish combines the best of Japanese comfort food with the delicate art of tempura.",
-    category: "Japanese",
+    category: categories[2],
     ingredients: [
       { id: 1, name: "Udon noodles", quantity: "4 servings" },
       { id: 2, name: "Dashi stock", quantity: "6 cups" },
@@ -480,7 +485,7 @@ const recipes = [
     title: "Apple Pancakes",
     description:
       "A traditional German breakfast featuring thin, crepe-like pancakes filled with caramelized apples and cinnamon. These delicate pancakes are perfect for a weekend brunch.",
-    category: "German",
+    category: categories[4],
     ingredients: [
       { id: 1, name: "All-purpose flour", quantity: "1.5 cups" },
       { id: 2, name: "Eggs", quantity: "3" },
@@ -533,7 +538,7 @@ const recipes = [
     title: "Chilaquiles",
     description:
       "A traditional Mexican breakfast dish featuring crispy tortilla chips smothered in salsa, topped with eggs, cheese, and fresh garnishes. A perfect way to start your day with bold flavors.",
-    category: "Mexican",
+    category: categories[3],
     ingredients: [
       { id: 1, name: "Corn tortillas", quantity: "12, cut into triangles" },
       { id: 2, name: "Vegetable oil", quantity: "1/4 cup" },
@@ -586,7 +591,7 @@ const recipes = [
     title: "Tamago Kake Gohan",
     description:
       "A simple yet delicious Japanese breakfast featuring a raw egg mixed with hot rice, seasoned with soy sauce and garnished with green onions. A quick and nutritious way to start your day.",
-    category: "Japanese",
+    category: categories[2],
     ingredients: [
       { id: 1, name: "Short-grain rice", quantity: "2 cups, cooked" },
       { id: 2, name: "Eggs", quantity: "2" },
@@ -634,7 +639,7 @@ const recipes = [
     title: "Panzanella Salad",
     description:
       "A refreshing Tuscan bread salad that makes perfect use of stale bread, fresh tomatoes, and basil. This light yet satisfying dish is ideal for a summer lunch.",
-    category: "Italian",
+    category: categories[0],
     ingredients: [
       { id: 1, name: "Stale Italian bread", quantity: "1 loaf, cubed" },
       { id: 2, name: "Ripe tomatoes", quantity: "4 large, diced" },
@@ -688,7 +693,7 @@ const recipes = [
     title: "Olivier Salad",
     description:
       "A classic Russian potato salad featuring diced vegetables, eggs, and meat in a creamy dressing. This hearty salad is a staple at Russian gatherings and makes a satisfying lunch.",
-    category: "Russian",
+    category: categories[1],
     ingredients: [
       { id: 1, name: "Potatoes", quantity: "4 medium, boiled and diced" },
       { id: 2, name: "Carrots", quantity: "3 medium, boiled and diced" },
@@ -741,7 +746,7 @@ const recipes = [
     title: "Tostadas",
     description:
       "Crispy corn tortillas topped with refried beans, shredded chicken, fresh vegetables, and tangy crema. A perfect light lunch that's both satisfying and nutritious.",
-    category: "Mexican",
+    category: categories[3],
     ingredients: [
       { id: 1, name: "Corn tortillas", quantity: "8" },
       { id: 2, name: "Refried beans", quantity: "2 cups" },
@@ -793,7 +798,7 @@ const recipes = [
     title: "Farmer's Breakfast",
     description:
       "A hearty German breakfast dish featuring potatoes, eggs, and bacon. This traditional breakfast is perfect for starting your day with energy and warmth.",
-    category: "German",
+    category: categories[4],
     ingredients: [
       { id: 1, name: "Potatoes", quantity: "4 medium, boiled and diced" },
       { id: 2, name: "Bacon", quantity: "8 slices, diced" },
@@ -849,7 +854,7 @@ const recipes = [
     title: "Bento Box",
     description:
       "A traditional Japanese lunch box featuring a variety of small dishes including teriyaki chicken, tamagoyaki (rolled omelette), rice, and pickled vegetables. This balanced meal is both visually appealing and nutritious.",
-    category: "Japanese",
+    category: categories[2],
     ingredients: [
       { id: 1, name: "Short-grain rice", quantity: "2 cups, cooked" },
       { id: 2, name: "Chicken thighs", quantity: "2, boneless" },
