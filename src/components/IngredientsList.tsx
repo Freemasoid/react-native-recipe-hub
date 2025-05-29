@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
   },
   amount: {
     fontFamily: GlobalValues.fonts.bold,
+    textTransform: "capitalize",
   },
   separator: {
     height: 12,

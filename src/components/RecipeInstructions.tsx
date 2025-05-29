@@ -10,7 +10,7 @@ interface Step {
 const IngredientList = ({ steps }: { steps: Step[] }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Ingredients</Text>
+      <Text style={styles.title}>Instructions</Text>
       <FlatList
         data={steps}
         keyExtractor={(item) => item.id.toString()}
