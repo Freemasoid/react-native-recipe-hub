@@ -1,7 +1,7 @@
 import type { Recipe } from "@/mock-data";
 import { GlobalValues } from "@/styles";
-import { HeartPlus } from "lucide-react-native";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import FavoriteButton from "./FavoriteButton";
 import StarRating from "./StarRating";
 
 interface ExploreCardProps {
@@ -54,10 +54,9 @@ const ExploreCard = ({ item, index, onPress }: ExploreCardProps) => {
           }}
           hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
         >
-          <HeartPlus
+          <FavoriteButton
             size={32}
-            strokeWidth={3}
-            color={GlobalValues.colors.primary}
+            recipeId={item.id}
           />
         </Pressable>
       </View>

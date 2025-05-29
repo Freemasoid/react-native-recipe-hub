@@ -1,8 +1,11 @@
+import { persistor, store } from "@/store/store";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from "react";
 import { View } from "react-native";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 export default function RootLayout() {
   const [fontsLoaded, fontError] = useFonts({
@@ -29,11 +32,18 @@ export default function RootLayout() {
   }
 
   return (
-    <View
-      style={{ flex: 1 }}
-      onLayout={onLayoutRootView}
-    >
-      <Stack screenOptions={{ headerShown: false }} />
-    </View>
+    <Provider store={store}>
+      <PersistGate
+        loading={null}
+        persistor={persistor}
+      >
+        <View
+          style={{ flex: 1 }}
+          onLayout={onLayoutRootView}
+        >
+          <Stack screenOptions={{ headerShown: false }} />
+        </View>
+      </PersistGate>
+    </Provider>
   );
 }
