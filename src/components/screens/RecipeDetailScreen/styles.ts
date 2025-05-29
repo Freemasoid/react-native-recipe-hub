@@ -2,18 +2,28 @@ import { GlobalStyles, GlobalValues } from "@/styles";
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-  container: { ...GlobalStyles.container, marginBottom: 24 },
+  container: { ...GlobalStyles.container },
   main: {
     flex: 1,
   },
   imageContainer: {
-    aspectRatio: 16 / 10,
+    aspectRatio: 12 / 10,
     position: "relative",
   },
-  gradient: {
+  gradientTop: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 100,
+    zIndex: 1,
+    transform: [{ rotate: "180deg" }],
+  },
+  gradientBottom: {
     position: "absolute",
     bottom: 0,
-    width: "100%",
+    left: 0,
+    right: 0,
     height: 150,
   },
   image: {
@@ -22,11 +32,12 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: "absolute",
-    top: 16,
+    top: 60,
     left: 16,
     padding: 12,
     backgroundColor: GlobalValues.colors.white,
     borderRadius: 9999,
+    zIndex: 2,
   },
   recipeInfo: {
     position: "absolute",
@@ -61,6 +72,9 @@ const styles = StyleSheet.create({
   content: {
     marginHorizontal: 16,
     marginVertical: 8,
+  },
+  detailsContainer: {
+    marginBottom: 24,
   },
 });
 

@@ -2,12 +2,11 @@ import { RecipeDetailScreen } from "@/components/screens/RecipeDetailScreen";
 import { recipes, type Recipe } from "@/mock-data";
 import { GlobalStyles } from "@/styles";
 import { router, useLocalSearchParams } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
 import { View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const RecipeDetail = () => {
-  const insets = useSafeAreaInsets();
   const { id } = useLocalSearchParams();
   const recipe = recipes.find((recipe) => recipe.id === Number(id));
 
@@ -22,7 +21,11 @@ const RecipeDetail = () => {
   }
 
   return (
-    <View style={[GlobalStyles.container, { paddingTop: insets.top }]}>
+    <View style={[GlobalStyles.container]}>
+      <StatusBar
+        style="light"
+        hidden={false}
+      />
       <RecipeDetailScreen recipe={recipe as Recipe} />
     </View>
   );

@@ -18,27 +18,37 @@ const RecipeDetailScreen = ({ recipe }: { recipe: Recipe }) => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.main}>
+      <View style={styles.main}>
         <View style={styles.imageContainer}>
-          <Image
-            source={{ uri: recipe.image }}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <LinearGradient
-            colors={["transparent", GlobalValues.colors.black]}
-            style={styles.gradient}
-          />
-
-          <Pressable
-            onPress={handleBackNav}
-            style={styles.backButton}
-          >
-            <ArrowLeft
-              size={20}
-              strokeWidth={3}
+          <View>
+            <LinearGradient
+              colors={["transparent", GlobalValues.colors.black]}
+              style={styles.gradientTop}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 0, y: 1 }}
             />
-          </Pressable>
+            <Image
+              source={{ uri: recipe.image }}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <LinearGradient
+              colors={["transparent", GlobalValues.colors.black]}
+              style={styles.gradientBottom}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 0, y: 1 }}
+            />
+
+            <Pressable
+              onPress={handleBackNav}
+              style={styles.backButton}
+            >
+              <ArrowLeft
+                size={20}
+                strokeWidth={3}
+              />
+            </Pressable>
+          </View>
 
           <View style={styles.recipeInfo}>
             <Text style={styles.title}>{recipe.title}</Text>
@@ -64,18 +74,20 @@ const RecipeDetailScreen = ({ recipe }: { recipe: Recipe }) => {
           </View>
         </View>
 
-        <View style={styles.content}>
-          <RecipeDescription description={recipe.description} />
-        </View>
+        <ScrollView style={styles.detailsContainer}>
+          <View style={styles.content}>
+            <RecipeDescription description={recipe.description} />
+          </View>
 
-        <View style={styles.content}>
-          <IngredientList ingredients={recipe.ingredients} />
-        </View>
+          <View style={styles.content}>
+            <IngredientList ingredients={recipe.ingredients} />
+          </View>
 
-        <View style={styles.content}>
-          <RecipeInstructions steps={recipe.steps} />
-        </View>
-      </ScrollView>
+          <View style={styles.content}>
+            <RecipeInstructions steps={recipe.steps} />
+          </View>
+        </ScrollView>
+      </View>
     </View>
   );
 };
