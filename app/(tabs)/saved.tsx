@@ -1,8 +1,14 @@
-import { Text, View } from "react-native";
+import { SavedScreen } from "@/components/screens/SavedScreen";
+import { GlobalStyles } from "@/styles";
+import { View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+
 const Saved = () => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <View>
-      <Text>Saved</Text>
+    <View style={[GlobalStyles.container, { paddingTop: insets.top }]}>
+      <SavedScreen />
     </View>
   );
 };
