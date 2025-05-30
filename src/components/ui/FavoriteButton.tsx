@@ -38,7 +38,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    padding: 8,
+    padding: 4,
   },
 });
 
