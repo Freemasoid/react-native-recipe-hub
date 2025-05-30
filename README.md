@@ -26,6 +26,7 @@ This part covers navigation handling. As with previous projects, I've grasped th
 </tr>
 <tr>
 <td><img src="./assets/images/app-showcase/myapp4.png" alt="myapp4" width="300"/><td>
+<td><img src="./assets/images/app-showcase/myapp5.png" alt="myapp5" width="300"/><td>
 </tr>
 </table>
 
