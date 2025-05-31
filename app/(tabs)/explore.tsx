@@ -1,4 +1,4 @@
-import { ExploreScreen } from "@/components/screens/Explore";
+import { ExploreScreen } from "@/components/screens/ExploreScreen";
 import { GlobalStyles } from "@/styles";
 import { View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
