@@ -10,8 +10,8 @@ import styles from "./styles";
 
 const ProfileScreen = () => {
   const [user] = useState({
-    name: "Roman Reins",
-    email: "roman.reins@example.com",
+    name: "John Doe",
+    email: "john.doe@example.com",
     avatar:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     joinDate: "March 2024",

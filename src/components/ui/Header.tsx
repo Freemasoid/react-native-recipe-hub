@@ -14,7 +14,7 @@ const Header = () => {
         </View>
         <View>
           <Text style={styles.greeting}>Hello 👋</Text>
-          <Text style={styles.username}>Roman Reins</Text>
+          <Text style={styles.username}>John Doe</Text>
         </View>
       </View>
 
